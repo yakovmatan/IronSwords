@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace IronSwords
 {
-    internal interface ITerrorist
+    public interface ITerrorist
     {
-        string name { get; set; }
-        int rank { get; set; }
-        bool status { get; set; }
-        List<string> weapone { get; set; }
+        string name { get;}
+        int rank { get;}
+        bool isLife { get;}
+        List<string> weapone { get;}
     }
 }

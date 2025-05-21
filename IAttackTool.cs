@@ -2,11 +2,11 @@
 
 public interface IAttackTool
 {
-    string Name { get; set; }
+    string Name { get; }
 
-    int AmountAmmunition { get; set; }
+    int AmountAmmunition { get; }
 
-    int fuel { get; set; }
+    int fuel { get; }
 
-    List<string> target { get; set; }
+    List<string> target { get; }
 }

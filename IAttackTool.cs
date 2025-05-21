@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-interface IAttackTool
+public interface IAttackTool
 {
     string Name { get; set; }
 

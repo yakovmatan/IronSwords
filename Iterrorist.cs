@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IronSwords
 {
-    internal interface Iterrorist
+    internal interface ITerrorist
     {
         string name { get; set; }
         int rank { get; set; }

@@ -5,9 +5,10 @@ using IronSwords;
 public class Terrorist : ITerrorist
 {
     public string name { get; }
-    public int rank { get; private set; }
+    public int rank { get; private set; } 
     public bool isLife { get; set; } = true;
     public List<string> weapone { get; private set; } = new List<string>();
+
 
     public Terrorist(string name)
     {

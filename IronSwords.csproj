@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="F16FighterJet.cs" />
+    <Compile Include="Hermes460%28Zic%29Drone.cs" />
+    <Compile Include="IAttackTool.cs" />
+    <Compile Include="IDF.cs" />
+    <Compile Include="M109Artillery.cs" />
     <Compile Include="Hamas.cs" />
     <Compile Include="Iterrorist.cs" />
     <Compile Include="Program.cs" />

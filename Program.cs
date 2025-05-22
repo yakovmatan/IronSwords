@@ -10,6 +10,11 @@ namespace IronSwords
     {
         static void Main(string[] args)
         {
+            ITerrorist tr = new Terrorist("muchamad");
+            ITerrorist trf = new Terrorist("Yusuf");
+            Message ms = new Message();
+            Message my = new Message();
+            Console.WriteLine(Aman.ReadList()[0].Terrorist.name);
         }
     }
 }

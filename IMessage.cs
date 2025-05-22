@@ -8,8 +8,10 @@ namespace IronSwords
 {
     public interface IMessage
     {
+
+        ITerrorist Terrorist { get; }
         string Location { get; }
 
-        DateTime Timestemp { get;  }
+        DateTime Timestamp { get;  }
     }
 }

@@ -3,15 +3,15 @@ using IronSwords;
 
 public class Message : IMessage
 {
-    ITerrorist terorrist;
+    public ITerrorist Terrorist { get; private set; }
 
     public string Location { get; private set; }
 
-    public DateTime Timestemp { get; private set; }
+    public DateTime Timestamp { get; private set; }
 
     public Message()
     {
-        ChooseTerorrist();
+        ChooseTerrorist();
         TheLocation();
         TheTimestemp();
         Aman.AddMessage(this);
@@ -29,15 +29,15 @@ public class Message : IMessage
     private void TheTimestemp()
     {
         DateTime now = DateTime.Now;
-        this.Timestemp = now;
+        this.Timestamp = now;
 
     }
 
-    private void ChooseTerorrist()
+    private void ChooseTerrorist()
     {
         Random random = new Random();
         int length = Hamas.ReadList().Count;
-        this.terorrist = Hamas.ReadList()[random.Next(length)];
+        this.Terrorist = Hamas.ReadList()[random.Next(length)];
     }
 
     

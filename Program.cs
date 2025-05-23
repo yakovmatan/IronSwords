@@ -23,8 +23,15 @@ namespace IronSwords
             IMessage c1 = new Message();
             IMessage d1 = new Message();
 
-            Strike one = new Strike();
-            one.StrikeExecution();
+            Menu menu = new Menu();
+
+            while(true)
+            {
+                menu.Show();
+                Console.WriteLine("press a key to continue.");
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
     }
 }

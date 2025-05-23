@@ -52,6 +52,7 @@
     <Compile Include="M109Artillery.cs" />
     <Compile Include="Hamas.cs" />
     <Compile Include="Iterrorist.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

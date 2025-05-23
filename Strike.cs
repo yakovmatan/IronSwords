@@ -1,4 +1,5 @@
-﻿using IronSwords;
+﻿using System;
+using IronSwords;
 
 public class Strike
 {
@@ -14,12 +15,21 @@ public class Strike
 
     public void StrikeExecution()
     {
+        bool execution = false;
         foreach (var weapon in IDF.ReadList())
         {
             if (string.Join(",",weapon.target).Contains(location)) // בודק האם הכלי מתאים לבדוק את המטרה
             {
                 weapon.Attack();
+                Console.WriteLine($"Target: {target.name}\nplace of attack: {location}\nThe attack tool: {weapon.Name}\nAmmunition used: 1\nOfficer's name: yakov matan");
+                execution = true;
+                break;
             }
+
+        }
+        if (!execution)
+        {
+            Console.WriteLine("The appropriate attack tool is not available for the attack.");
         }
     }
 }

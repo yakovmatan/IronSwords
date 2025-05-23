@@ -15,6 +15,10 @@ public class Strike
 
     public void StrikeExecution()
     {
+        TargetPrioritization prioritization = new TargetPrioritization();
+        this.target = prioritization.dangerTerrorist;
+        this.location = prioritization.location;
+        
         bool execution = false;
         foreach (var weapon in IDF.ReadList())
         {

@@ -13,6 +13,9 @@ namespace IronSwords
             Terrorist a = new Terrorist("muchamad");
             Terrorist b = new Terrorist("ali");
             Terrorist c = new Terrorist("yusuf");
+            Terrorist d = new Terrorist("ismail");
+            Terrorist e = new Terrorist("ychia");
+            Terrorist f = new Terrorist("achmad");
 
             AttackTool F16 = new F16FighterJet();
             AttackTool Zik = new Hermes460ZikDrone();

@@ -9,4 +9,7 @@ public interface IAttackTool
     int fuel { get; }
 
     List<string> target { get; }
+
+    void Attack();
+    void Refuel(int amount);
 }

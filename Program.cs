@@ -10,6 +10,28 @@ namespace IronSwords
     {
         static void Main(string[] args)
         {
+            Terrorist a = new Terrorist("muchama");
+            Terrorist b = new Terrorist("ali");
+            Terrorist c = new Terrorist("yusuf");
+
+            IAttackTool F16 = new F16FighterJet();
+            IAttackTool Zik = new Hermes460ZicDrone();
+            IAttackTool M109 = new M109Artillery();
+
+            IMessage a1 = new Message();
+            IMessage b1 = new Message();
+            IMessage c1 = new Message();
+            IMessage d1 = new Message();
+
+            Menu menu = new Menu();
+
+            while(true)
+            {
+                menu.Show();
+                Console.WriteLine("press a key to continue.");
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
     }
 }

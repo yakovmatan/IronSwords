@@ -23,7 +23,7 @@ public class Hermes460ZicDrone : IAttackTool
         }
     }
 
-    public void attack()
+    public void Attack()
     {
         this.AmountAmmunition--;
     }

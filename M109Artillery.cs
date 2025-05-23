@@ -24,7 +24,7 @@ public class  M109Artillery : IAttackTool
         }
     }
 
-    public void attack()
+    public void Attack()
     {
         this.AmountAmmunition--;
     }

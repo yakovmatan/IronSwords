@@ -52,10 +52,13 @@
     <Compile Include="M109Artillery.cs" />
     <Compile Include="Hamas.cs" />
     <Compile Include="Iterrorist.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strike.cs" />
     <Compile Include="StrikeAvailability.cs" />
+    <Compile Include="TargetPrioritization.cs" />
     <Compile Include="Terrorist.cs" />
     <Compile Include="TopTerroristReport.cs" />
   </ItemGroup>

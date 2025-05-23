@@ -4,7 +4,13 @@ using System.Linq;
 
 public class TopTerroristReport
 {
-    private Dictionary<string, int> DictOfTerrorists;
+    private Dictionary<string, int> DictOfTerrorists = new Dictionary<string, int>();
+
+
+    public TopTerroristReport()
+    {
+        DictTerroristReport(); // קריאה אוטומטית עם יצירת האובייקט
+    }
 
     public void DictTerroristReport()
     {

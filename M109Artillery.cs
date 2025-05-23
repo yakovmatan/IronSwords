@@ -1,33 +1,17 @@
 ﻿using System.Collections.Generic;
 
-public class  M109Artillery : IAttackTool
+public class  M109Artillery : AttackTool
 {
-    public string Name { get; } = "M109";
 
-    public int fuel { get; private set; } = 80;
-
-    public int AmountAmmunition { get; private set; } = 3;
-
-    public List<string> target { get; } = new List<string> { "open area" };
+    public override List<string> target { get; } = new List<string> { "open area" };
 
 
-    public M109Artillery()
+    public M109Artillery():base(3,"M109")
     {
         IDF.AddAttackTool(this);
     }
 
-    public void Refuel(int amount)
-    {
-        if (amount > 0)
-        {
-            this.fuel += amount;
-        }
-    }
-
-    public void Attack()
-    {
-        this.AmountAmmunition--;
-    }
+  
 
 
 }

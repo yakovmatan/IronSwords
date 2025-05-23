@@ -14,9 +14,9 @@ namespace IronSwords
             Terrorist b = new Terrorist("ali");
             Terrorist c = new Terrorist("yusuf");
 
-            IAttackTool F16 = new F16FighterJet();
-            IAttackTool Zik = new Hermes460ZicDrone();
-            IAttackTool M109 = new M109Artillery();
+            AttackTool F16 = new F16FighterJet();
+            AttackTool Zik = new Hermes460ZikDrone();
+            AttackTool M109 = new M109Artillery();
 
             IMessage a1 = new Message();
             IMessage b1 = new Message();

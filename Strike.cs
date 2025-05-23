@@ -20,10 +20,14 @@ public class Strike
         {
             if (string.Join(",",weapon.target).Contains(location)) // בודק האם הכלי מתאים לבדוק את המטרה
             {
-                weapon.Attack();
-                Console.WriteLine($"Target: {target.name}\nplace of attack: {location}\nThe attack tool: {weapon.Name}\nAmmunition used: 1\nOfficer's name: yakov matan");
-                execution = true;
-                break;
+                if (weapon.AmountAmmunition > 0)
+                {
+                    weapon.Attack();
+                    Console.WriteLine($"Target: {target.name}\nplace of attack: {location}\nThe attack tool: {weapon.Name}\nAmmunition used: 1\nOfficer's name: yakov matan");
+                    execution = true;
+                break; 
+                }
+               
             }
 
         }

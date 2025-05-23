@@ -47,7 +47,6 @@
     <Compile Include="AttackTool.cs" />
     <Compile Include="F16FighterJet.cs" />
     <Compile Include="Hermes460%28Zic%29Drone.cs" />
-    <Compile Include="IAttackTool.cs" />
     <Compile Include="IDF.cs" />
     <Compile Include="IMessage.cs" />
     <Compile Include="M109Artillery.cs" />

@@ -10,7 +10,7 @@ namespace IronSwords
     {
         static void Main(string[] args)
         {
-            Terrorist a = new Terrorist("muchama");
+            Terrorist a = new Terrorist("muchamad");
             Terrorist b = new Terrorist("ali");
             Terrorist c = new Terrorist("yusuf");
 

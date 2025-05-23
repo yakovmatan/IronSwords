@@ -12,5 +12,7 @@ namespace IronSwords
         int rank { get;}
         bool isLife { get;}
         List<string> weapone { get;}
+
+        void updateIsLife();
     }
 }

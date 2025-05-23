@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using IronSwords;
 
 public abstract class AttackTool
 {
@@ -23,9 +24,10 @@ public abstract class AttackTool
         }
     }
 
-    public virtual void Attack()
+    public virtual void Attack(ITerrorist terrorist)
     {
         this.AmountAmmunition--;
+        terrorist.updateIsLife();
     }
 
 }

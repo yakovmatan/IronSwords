@@ -22,7 +22,7 @@ public class Strike
             {
                 if (weapon.AmountAmmunition > 0)
                 {
-                    weapon.Attack();
+                    weapon.Attack(target);
                     Console.WriteLine($"Target: {target.name}\nplace of attack: {location}\nThe attack tool: {weapon.Name}\nAmmunition used: 1\nOfficer's name: yakov matan");
                     execution = true;
                 break; 

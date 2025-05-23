@@ -26,7 +26,7 @@ public class F16FighterJet : IAttackTool
         }
     }
 
-    public void attack()
+    public void Attack()
     {
         this.AmountAmmunition--;
     }

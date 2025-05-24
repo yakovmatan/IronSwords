@@ -7,7 +7,7 @@ public class TargetPrioritization
     public int tempWeaponPoints { get; private set; } = 0; // שדה זמני לשמירת רמת סיכון המחבל
     public int BestWeaponPoints { get; private set; } = 0; // שדה לשמירת רמת הסיכון הגבוהה ביותר
 
-    public ITerrorist dangerTerrorist = Aman.ReadList()[0].Terrorist; // שדה לשמירת אובייקט המחבל המסוכן ביותר
+    public ITerrorist dangerTerrorist = null; // שדה לשמירת אובייקט המחבל המסוכן ביותר
 
     public string location;
 
@@ -50,13 +50,27 @@ public class TargetPrioritization
 
             }
         }
+        if (this.BestWeaponPoints == 0)
+        {
+            this.dangerTerrorist = null;
+            this.location = null;
+        }
     }
 
     public void Display()  // דוח על המחבל המסוכן ביותר
     {
+        TheMostDangerousTerrorist();
+        if (this.dangerTerrorist == null)
+        {
+            Console.WriteLine("No live terrorists were found.");
+        }
+        else
+        {
 
-        Console.WriteLine($"Name: {this.dangerTerrorist.name}\nRank: {this.dangerTerrorist.rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ",this.dangerTerrorist.weapone)}\nlocation: {this.location}");
+            Console.WriteLine($"Name: {this.dangerTerrorist.name}\nRank: {this.dangerTerrorist.rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.weapone)}\nlocation: {this.location}");
+
+        }
+
     }
-
     
 }

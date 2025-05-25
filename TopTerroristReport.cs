@@ -16,11 +16,11 @@ public class TopTerroristReport
     {
         foreach (var i in Aman.ReadList())
         {
-            if (DictOfTerrorists.ContainsKey(i.Terrorist.name))
+            if (i.Terrorist.isLife && DictOfTerrorists.ContainsKey(i.Terrorist.name))
             {
                 DictOfTerrorists[i.Terrorist.name] += 1;
             }
-            else
+            else if(i.Terrorist.isLife)
             {
                 DictOfTerrorists[i.Terrorist.name] = 1;
             }
@@ -28,13 +28,25 @@ public class TopTerroristReport
     } 
     public void ShowTopTerroristReport()
     {
-        int maxValue = DictOfTerrorists.Values.Max();
-        foreach(var kv in DictOfTerrorists)
+        DictOfTerrorists.Clear();
+        DictTerroristReport();
+        int maxValue;
+        if (DictOfTerrorists.Any())
         {
-            if(kv.Value == maxValue)
+            maxValue = DictOfTerrorists.Values.Max();
+            foreach (var kv in DictOfTerrorists)
             {
-                Console.WriteLine(kv.Key);
+                if (kv.Value == maxValue)
+                {
+                    Console.WriteLine(kv.Key);
+                }
             }
         }
+        else
+        {
+            Console.WriteLine("There is no information about living terrorists.");
+        }
+        
+        
     }
 }

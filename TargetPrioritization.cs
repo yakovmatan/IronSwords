@@ -61,6 +61,7 @@ public class TargetPrioritization
 
     public void Display()  // דוח על המחבל המסוכן ביותר
     {
+        dangerTerrorist = null;
         TheMostDangerousTerrorist();
         if (this.dangerTerrorist == null)
         {

@@ -6,6 +6,8 @@ public class Strike
     private ITerrorist target;
     private string location;
     private DateTime Time;
+    private Sound sound = new Sound();
+
 
     public Strike()
     {
@@ -24,11 +26,12 @@ public class Strike
         bool execution = false;
         foreach (var weapon in IDF.ReadList())
         {
-            if (weapon.target.Contains(location)) // בודק האם הכלי מתאים לבדוק את המטרה
+            if (string.Join(",",weapon.target).Contains(location)) // בודק האם הכלי מתאים לבדוק את המטרה
             {
                 if (weapon.AmountAmmunition > 0)
                 {
                     weapon.Attack(target);
+                    sound.TheSound();
                     Console.WriteLine("The strike on the terrorist was successfully executed");
                     Console.WriteLine($"Target: {target.name}\nTime of ordering the attack: {Time} \nplace of attack: {location}\nThe attack tool: {weapon.Name}\nAmmunition used: 1\nOfficer's name: yakov matan");
                     execution = true;

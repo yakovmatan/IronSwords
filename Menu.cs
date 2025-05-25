@@ -2,18 +2,18 @@
 
 public class Menu
 {
-    private TopTerroristReport messageAnalyzer = new TopTerroristReport();
-    private StrikeAvailability weaponProvider = new StrikeAvailability();
-    private TargetPrioritization threatAnalyzer = new TargetPrioritization();
-    private Strike strikeExecutor = new Strike();
+    private TopTerroristReport MessageAnalyzer = new TopTerroristReport();
+    private StrikeAvailability WeaponProvider = new StrikeAvailability();
+    private TargetPrioritization ThreatAnalyzer = new TargetPrioritization();
+    private Strike StrikeExecutor = new Strike();
 
     public void Show()
     {
         Console.WriteLine("\n\nSelect an action:");
         Console.WriteLine("1. The terrorist with the most intelligence reports");
-        Console.WriteLine("2. Get stride weapon information");
+        Console.WriteLine("2. Get strike weapon information");
         Console.WriteLine("3. Find the most dengerous terrorist");
-        Console.WriteLine("4. Exeute a strike");
+        Console.WriteLine("4. Execute a strike");
         Console.WriteLine("0. Exit");
 
         string input = Console.ReadLine();
@@ -21,21 +21,21 @@ public class Menu
         switch (input)
         {
             case "1":
-                messageAnalyzer.ShowTopTerroristReport();
+                MessageAnalyzer.ShowTopTerroristReport();
                 break;
 
             case "2":
-                weaponProvider.ShowStrikeAvailabilty();
+                WeaponProvider.ShowStrikeAvailabilty();
                 break;
 
             case "3":
-                threatAnalyzer.Display();
+                ThreatAnalyzer.Display();
                 break;
 
             case "4":
                 try
                 {
-                    strikeExecutor.StrikeExecution();
+                    StrikeExecutor.StrikeExecution();
                     break;
                 }
                 catch

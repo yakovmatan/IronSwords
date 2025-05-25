@@ -3,14 +3,14 @@ using IronSwords;
 
 static class Aman
 {
-    private static List<IMessage> messages = new List<IMessage>();
+    private static List<IMessage> Messages = new List<IMessage>();
 
     public static void AddMessage(IMessage message)
     {
-        messages.Add(message);
+        Messages.Add(message);
     }
     public static IReadOnlyList<IMessage> ReadList()
     {
-        return messages.AsReadOnly();
+        return Messages.AsReadOnly();
     }
 }

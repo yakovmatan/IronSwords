@@ -13,6 +13,6 @@ namespace IronSwords
         bool isLife { get;}
         List<string> weapone { get;}
 
-        void updateIsLife();
+        void KillTerrorist();
     }
 }

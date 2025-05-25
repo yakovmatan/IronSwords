@@ -10,6 +10,7 @@ public class TargetPrioritization
     public ITerrorist dangerTerrorist = null; // שדה לשמירת אובייקט המחבל המסוכן ביותר
 
     public string location;
+    public DateTime TimeStamp;
 
 
     public TargetPrioritization()
@@ -46,6 +47,7 @@ public class TargetPrioritization
                     this.BestWeaponPoints = this.tempWeaponPoints;
                     this.dangerTerrorist = message.Terrorist;
                     this.location = message.Location;
+                    this.TimeStamp = message.Timestamp;
                 }
 
             }

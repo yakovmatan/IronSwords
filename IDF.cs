@@ -6,14 +6,14 @@ public static class IDF
 
     private static string CurrentCommander = "eyal zamir";
 
-    private static List<IAttackTool> attackTools = new List<IAttackTool>();
+    private static List<AttackTool> attackTools = new List<AttackTool>();
 
-    public static void AddAttackTool(IAttackTool tool)
+    public static void AddAttackTool(AttackTool tool)
     {
         attackTools.Add(tool);
     }
 
-    public static IReadOnlyList<IAttackTool> ReadList()
+    public static IReadOnlyList<AttackTool> ReadList()
     {
         return attackTools.AsReadOnly();
     }

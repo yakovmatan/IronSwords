@@ -33,8 +33,17 @@ public class Menu
                 break;
 
             case "4":
-                strikeExecutor.StrikeExecution();
-                break;
+                try
+                {
+                    strikeExecutor.StrikeExecution();
+                    break;
+                }
+                catch
+                {
+                    Console.WriteLine("No terrorist available for attack");
+                    break;
+                }
+                
 
             case "0":
                 Environment.Exit(0);

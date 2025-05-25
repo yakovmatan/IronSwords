@@ -3,6 +3,7 @@ using IronSwords;
 
 public class Message : IMessage
 {
+    private static Random rand = new Random();
     public ITerrorist Terrorist { get; private set; }
 
     public string Location { get; private set; }
@@ -20,9 +21,8 @@ public class Message : IMessage
 
     private void TheLocation()
     {
-        Random rand = new Random();
         string[] locations = { "buildings", "people", "cars", "open area" };
-        this.Location =  locations[rand.Next(4)];
+        this.Location =  locations[rand.Next(locations.Length)];
 
     }
 
@@ -35,9 +35,15 @@ public class Message : IMessage
 
     private void ChooseTerrorist()
     {
-        Random random = new Random();
-        int length = Hamas.ReadList().Count;
-        this.Terrorist = Hamas.ReadList()[random.Next(length)];
+        var list = Hamas.ReadList();
+        if (list.Count > 0)
+        {
+            this.Terrorist = list[rand.Next(list.Count)];
+        }
+        else
+        {
+            this.Terrorist = null; // טיפול במקרה שאין מחבלים
+        }
     }
 
     

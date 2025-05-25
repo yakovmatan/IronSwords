@@ -15,6 +15,10 @@ public class Strike
 
     public void StrikeExecution()
     {
+        TargetPrioritization prioritization = new TargetPrioritization();
+        this.target = prioritization.dangerTerrorist;
+        this.location = prioritization.location;
+        
         bool execution = false;
         foreach (var weapon in IDF.ReadList())
         {
@@ -22,7 +26,7 @@ public class Strike
             {
                 if (weapon.AmountAmmunition > 0)
                 {
-                    weapon.Attack();
+                    weapon.Attack(target);
                     Console.WriteLine($"Target: {target.name}\nplace of attack: {location}\nThe attack tool: {weapon.Name}\nAmmunition used: 1\nOfficer's name: yakov matan");
                     execution = true;
                 break; 

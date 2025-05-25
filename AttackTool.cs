@@ -27,7 +27,7 @@ public abstract class AttackTool
     public virtual void Attack(ITerrorist terrorist)
     {
         this.AmountAmmunition--;
-        terrorist.updateIsLife();
+        terrorist.KillTerrorist();
     }
 
 }

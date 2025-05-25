@@ -36,7 +36,7 @@ public class Terrorist : ITerrorist
 
         }
     }
-    public void updateIsLife()
+    public void KillTerrorist()
     {
         this.isLife = false;
     }

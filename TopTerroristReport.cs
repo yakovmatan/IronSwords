@@ -16,13 +16,13 @@ public class TopTerroristReport
     {
         foreach (var i in Aman.ReadList())
         {
-            if (i.Terrorist.isLife && DictOfTerrorists.ContainsKey(i.Terrorist.name))
+            if (i.Terrorist.IsLife && DictOfTerrorists.ContainsKey(i.Terrorist.Name))
             {
-                DictOfTerrorists[i.Terrorist.name] += 1;
+                DictOfTerrorists[i.Terrorist.Name] += 1;
             }
-            else if(i.Terrorist.isLife)
+            else if(i.Terrorist.IsLife)
             {
-                DictOfTerrorists[i.Terrorist.name] = 1;
+                DictOfTerrorists[i.Terrorist.Name] = 1;
             }
         }
     } 

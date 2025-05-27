@@ -4,8 +4,8 @@ using IronSwords;
 
 static class Hamas
 {
-    private static string DateOfFormation = "14.12.1987";
-    private static string CurrentCommander = "sinuwar";
+    public static string DateOfFormation { get; } = "14.12.1987";
+    public static string CurrentCommander { get; private set; } = "sinuwar";
     private static List<ITerrorist> listOfTerrorists = new List<ITerrorist>();
     
     public static void AddTerrorist(ITerrorist terrorist)

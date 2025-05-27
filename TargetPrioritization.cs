@@ -3,13 +3,13 @@ using IronSwords;
 
 public class TargetPrioritization
 {
- 
+
     public int BestWeaponPoints { get; private set; } // שדה לשמירת רמת הסיכון הגבוהה ביותר
 
     public ITerrorist dangerTerrorist = null; // שדה לשמירת אובייקט המחבל המסוכן ביותר
 
-    public string location;
-    public DateTime TimeStamp;
+    public string location { get; private set; }
+    public DateTime TimeStamp { get; private set; }
 
 
     public TargetPrioritization()
@@ -22,10 +22,10 @@ public class TargetPrioritization
         this.BestWeaponPoints = 0;
         foreach (var message in Aman.ReadList())
         {
-            if (message.Terrorist.isLife) // בדיקה רק על המחבלים החיים
+            if (message.Terrorist.IsLife) // בדיקה רק על המחבלים החיים
             {
                 int score = 0;
-                foreach (var i in message.Terrorist.weapone)  // מעבר על רשימת כלי הנשק של המחבל ודירוג תוך כדי
+                foreach (var i in message.Terrorist.Weapons)  // מעבר על רשימת כלי הנשק של המחבל ודירוג תוך כדי
                 {
                     if (i == "knife")
                     {
@@ -42,7 +42,7 @@ public class TargetPrioritization
                         score += 3;
                     }
                 }
-                score *= message.Terrorist.rank; // קביעת רמת סיכון ע"פ הנוסחה
+                score *= message.Terrorist.Rank; // קביעת רמת סיכון ע"פ הנוסחה
                 if (score > this.BestWeaponPoints) // עדכון רמת הסיכון הגבוהה ביותר והמחבל המסוכן ביותר 
                 {
                     this.BestWeaponPoints = score;
@@ -71,7 +71,7 @@ public class TargetPrioritization
         else
         {
 
-            Console.WriteLine($"Name: {this.dangerTerrorist.name}\nRank: {this.dangerTerrorist.rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.weapone)}\nlocation: {this.location}");
+            Console.WriteLine($"Name: {this.dangerTerrorist.Name}\nRank: {this.dangerTerrorist.Rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.Weapons)}\nlocation: {this.location}");
 
         }
 

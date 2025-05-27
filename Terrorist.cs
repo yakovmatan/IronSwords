@@ -4,16 +4,16 @@ using IronSwords;
 
 public class Terrorist : ITerrorist
 {
-    public string name { get; }
-    public int rank { get; private set; } 
-    public bool isLife { get; set; } = true;
-    public List<string> weapone { get; private set; } = new List<string>();
+    public string Name { get; }
+    public int Rank { get; private set; } 
+    public bool IsLife { get; set; } = true;
+    public List<string> Weapons { get; private set; } = new List<string>();
 
 
     public Terrorist(string name)
     {
-        this.name = name;
-        this.rank = updateRank();
+        this.Name = name;
+        this.Rank = updateRank();
         updateWeapone();
         Hamas.AddTerrorist(this);
     }
@@ -32,13 +32,13 @@ public class Terrorist : ITerrorist
         List<string>weaponType = new List<string>{ "knife", "gun", "M16", "AK47" };
         for (int i = 0; i < sum; i++)
         {
-            this.weapone.Add(weaponType[random.Next(weaponType.Count)]);
+            this.Weapons.Add(weaponType[random.Next(weaponType.Count)]);
 
         }
     }
     public void KillTerrorist()
     {
-        this.isLife = false;
+        this.IsLife = false;
     }
     
 }

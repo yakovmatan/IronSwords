@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aman\Aman.cs" />
-    <Compile Include="Hamas\TerroristFactory.cs" />
     <Compile Include="Weapons\AttackTool.cs" />
     <Compile Include="Weapons\F16FighterJet.cs" />
     <Compile Include="Weapons\Hermes460%28Zik%29Drone.cs" />

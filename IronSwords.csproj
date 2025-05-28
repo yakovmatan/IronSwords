@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Aman.cs" />
     <Compile Include="AttackTool.cs" />
-    <Compile Include="Emojis&amp;sound.cs" />
     <Compile Include="F16FighterJet.cs" />
     <Compile Include="Hermes460%28Zik%29Drone.cs" />
     <Compile Include="IDF.cs" />

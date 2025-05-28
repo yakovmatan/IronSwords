@@ -2,9 +2,9 @@
 
 public static class IDF
 {
-    private static string DateOfEstablishment = "26/02/1948";
+    public static string DateOfEstablishment { get; } = "26/02/1948";
 
-    private static string CurrentCommander = "eyal zamir";
+    public static string CurrentCommander { get; private set; } = "eyal zamir";
 
     private static List<AttackTool> attackTools = new List<AttackTool>();
 

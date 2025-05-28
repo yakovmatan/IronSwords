@@ -3,14 +3,13 @@ using IronSwords;
 
 public class TargetPrioritization
 {
- 
-    public int tempWeaponPoints { get; private set; } = 0; // שדה זמני לשמירת רמת סיכון המחבל
-    public int BestWeaponPoints { get; private set; } = 0; // שדה לשמירת רמת הסיכון הגבוהה ביותר
+
+    public int BestWeaponPoints { get; private set; } // שדה לשמירת רמת הסיכון הגבוהה ביותר
 
     public ITerrorist dangerTerrorist = null; // שדה לשמירת אובייקט המחבל המסוכן ביותר
 
-    public string location;
-    public DateTime TimeStamp;
+    public string location { get; private set; }
+    public DateTime TimeStamp { get; private set; }
 
 
     public TargetPrioritization()
@@ -20,35 +19,38 @@ public class TargetPrioritization
 
     public void TheMostDangerousTerrorist()
     {
+        this.BestWeaponPoints = 0;
         foreach (var message in Aman.ReadList())
         {
-            if (message.Terrorist.isLife) // בדיקה רק על המחבלים החיים
+            if (message.Terrorist.IsLife) // בדיקה רק על המחבלים החיים
             {
-                foreach (var i in message.Terrorist.weapone)  // מעבר על רשימת כלי הנשק של המחבל ודירוג תוך כדי
+                int score = 0;
+                foreach (var i in message.Terrorist.Weapons)  // מעבר על רשימת כלי הנשק של המחבל ודירוג תוך כדי
                 {
                     if (i == "knife")
                     {
-                        this.tempWeaponPoints += 1;
+                        score += 1;
                     }
 
                     else if (i == "gun")
                     {
-                        this.tempWeaponPoints += 2;
+                        score += 2;
                     }
 
                     else if (i == "M16" || i == "AK47")
                     {
-                        this.tempWeaponPoints += 3;
+                        score += 3;
                     }
                 }
-                this.tempWeaponPoints *= message.Terrorist.rank; // קביעת רמת סיכון ע"פ הנוסחה
-                if (this.tempWeaponPoints > this.BestWeaponPoints) // עדכון רמת הסיכון הגבוהה ביותר והמחבל המסוכן ביותר 
+                score *= message.Terrorist.Rank; // קביעת רמת סיכון ע"פ הנוסחה
+                if (score > this.BestWeaponPoints) // עדכון רמת הסיכון הגבוהה ביותר והמחבל המסוכן ביותר 
                 {
-                    this.BestWeaponPoints = this.tempWeaponPoints;
+                    this.BestWeaponPoints = score;
                     this.dangerTerrorist = message.Terrorist;
                     this.location = message.Location;
                     this.TimeStamp = message.Timestamp;
                 }
+                
 
             }
         }
@@ -61,7 +63,6 @@ public class TargetPrioritization
 
     public void Display()  // דוח על המחבל המסוכן ביותר
     {
-        dangerTerrorist = null;
         TheMostDangerousTerrorist();
         if (this.dangerTerrorist == null)
         {
@@ -70,7 +71,7 @@ public class TargetPrioritization
         else
         {
 
-            Console.WriteLine($"Name: {this.dangerTerrorist.name}\nRank: {this.dangerTerrorist.rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.weapone)}\nlocation: {this.location}");
+            Console.WriteLine($"Name: {this.dangerTerrorist.Name}\nRank: {this.dangerTerrorist.Rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.Weapons)}\nlocation: {this.location}");
 
         }
 

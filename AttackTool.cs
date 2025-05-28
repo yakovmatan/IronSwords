@@ -6,7 +6,7 @@ public abstract class AttackTool
     public string Name { get; }
     public abstract List<string> target { get; }
 
-    public int fuel { get; protected set; } = 80;
+    public int Fuel { get; protected set; } = 80;
 
     public int AmountAmmunition { get; protected set; }
 
@@ -20,7 +20,7 @@ public abstract class AttackTool
     {
         if (amount > 0)
         {
-            this.fuel += amount;
+            this.Fuel += amount;
         }
     }
 

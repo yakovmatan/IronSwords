@@ -8,10 +8,10 @@ namespace IronSwords
 {
     public interface ITerrorist
     {
-        string name { get;}
-        int rank { get;}
-        bool isLife { get;}
-        List<string> weapone { get;}
+        string Name { get;}
+        int Rank { get;}
+        bool IsLife { get;}
+        List<string> Weapons { get;}
 
         void KillTerrorist();
     }

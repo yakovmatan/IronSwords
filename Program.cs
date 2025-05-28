@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,21 +11,12 @@ namespace IronSwords
     {
         static void Main(string[] args)
         {
-            Terrorist a = new Terrorist("muchamad");
-            Terrorist b = new Terrorist("ali");
-            Terrorist c = new Terrorist("yusuf");
-            Terrorist d = new Terrorist("ismail");
-            Terrorist e = new Terrorist("ychia");
-            Terrorist f = new Terrorist("achmad");
-
-            AttackTool F16 = new F16FighterJet();
-            AttackTool Zik = new Hermes460ZikDrone();
-            AttackTool M109 = new M109Artillery();
-
-            IMessage a1 = new Message();
-            IMessage b1 = new Message();
-            IMessage c1 = new Message();
-            IMessage d1 = new Message();
+            AttackToolFactory weapon = new AttackToolFactory();
+            TerroristFactory terrorist = new TerroristFactory();
+            MessageFactory message = new MessageFactory();
+            weapon.createWeapon();
+            terrorist.CreateTerrorist();
+            message.CreateMessage();
 
             Menu menu = new Menu();
 

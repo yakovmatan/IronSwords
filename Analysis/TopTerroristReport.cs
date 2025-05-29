@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using IronSwords;
 
 public class TopTerroristReport
 {
-    private Dictionary<string, int> DictOfTerrorists = new Dictionary<string, int>();
+    private Dictionary<ITerrorist, int> DictOfTerrorists = new Dictionary<ITerrorist, int>();
 
 
     public TopTerroristReport()
@@ -16,13 +17,13 @@ public class TopTerroristReport
     {
         foreach (var i in Aman.ReadList())
         {
-            if (i.Terrorist.IsLife && DictOfTerrorists.ContainsKey(i.Terrorist.Name))
+            if (i.Terrorist.IsLife && DictOfTerrorists.ContainsKey(i.Terrorist))
             {
-                DictOfTerrorists[i.Terrorist.Name] += 1;
+                DictOfTerrorists[i.Terrorist] += 1;
             }
             else if(i.Terrorist.IsLife)
             {
-                DictOfTerrorists[i.Terrorist.Name] = 1;
+                DictOfTerrorists[i.Terrorist] = 1;
             }
         }
     } 
@@ -38,7 +39,7 @@ public class TopTerroristReport
             {
                 if (kv.Value == maxValue)
                 {
-                    Console.WriteLine(kv.Key);
+                    Console.WriteLine(kv.Key.Name);
                 }
             }
         }

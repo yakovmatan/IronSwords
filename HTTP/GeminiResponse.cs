@@ -8,17 +8,17 @@ namespace IronSwords.HTTP
 {
     internal class GeminiResponse
     {
-        public List<Candidate> candidates { get; set; }
+        public List<candidate> candidates { get; set; }
     }
-    public class Candidate
+    public class candidate
     {
-        public Content  content { get; set; }
+        public content  content { get; set; }
     }
-    public class Content
+    public class content
     {
-        public List<Part> Parts { get; set; }
+        public List<part> parts { get; set; }
     }
-    public class Part
+    public class part
     {
         public string text { get; set; }
     }

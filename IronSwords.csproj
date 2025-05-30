@@ -218,7 +218,9 @@
     <Compile Include="Aman\Aman.cs" />
     <Compile Include="Aman\MessageFactory.cs" />
     <Compile Include="Hamas\TerroristFactory.cs" />
-    <Compile Include="LLM\HttpRequest.cs" />
+    <Compile Include="HTTP\GeminiClient.cs" />
+    <Compile Include="HTTP\GeminiResponse.cs" />
+    <Compile Include="HTTP\HttpRequester.cs" />
     <Compile Include="Weapons\AttackTool.cs" />
     <Compile Include="Weapons\AttacktoolFactory.cs" />
     <Compile Include="Weapons\F16FighterJet.cs" />
@@ -240,7 +242,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="LLM\.env" />
+    <None Include="HTTP\.env" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -71,7 +71,7 @@ public class TargetPrioritization
         else
         {
 
-            Console.WriteLine($"Name: {this.dangerTerrorist.Name}\nRank: {this.dangerTerrorist.Rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.Weapons)}\nlocation: {this.location}");
+            Console.WriteLine($"Name: {this.dangerTerrorist.Name}\nID: {this.dangerTerrorist.Id}\nRank: {this.dangerTerrorist.Rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.Weapons)}\nlocation: {this.location}");
 
         }
 

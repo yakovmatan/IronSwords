@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using IronSwords.LLM;
 
 public class TerroristFactory
 {
@@ -27,15 +29,20 @@ public class TerroristFactory
     "Ali Darwish"
     };
     Random rand = new Random();
-    public void CreateTerrorist()
+    public async Task CreateTerrorists(GeminiClient gemini)
     {
         for (int i = 0; i<11; i++)
         {
             int index = rand.Next(terrorists.Count);
             string terrorist = terrorists[index];
-            terrorists.RemoveAt(index);
-            new Terrorist(terrorist);
+            string id = await GetId(gemini);
+            new Terrorist(terrorist,id);
         }
+    }
+
+    private async Task<string> GetId(GeminiClient gemini)
+    {
+        return await gemini.SendPromptAsync("Give me a random 9-digit number only, no explanation or text.");
     }
     
 }

@@ -16,7 +16,7 @@ using IronSwords.HTTP;
 
 namespace IronSwords.LLM
 {
-    internal class GeminiClient
+    public class GeminiClient
     {
         private readonly HttpRequester Client;
         private readonly string Apikey;
@@ -53,7 +53,7 @@ namespace IronSwords.LLM
             string responsJson = await Client.PostJsonAsync(this.Url, body);
             var parsedToJson = JsonSerializer.Deserialize<GeminiResponse>(responsJson);
             var text = parsedToJson?.candidates?.FirstOrDefault()?.content?.parts?.FirstOrDefault()?.text;
-            return text?? "no response received";
+            return text?.Trim() ?? "no response received";
         }
     }
 }

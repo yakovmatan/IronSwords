@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using IronSwords;
 
-public class TopTerroristReport
+public class TerroristReport
 {
     private Dictionary<ITerrorist, int> DictOfTerrorists = new Dictionary<ITerrorist, int>();
 
 
-    public TopTerroristReport()
+    public TerroristReport()
     {
         DictTerroristReport(); // קריאה אוטומטית עם יצירת האובייקט
     }
@@ -29,19 +29,17 @@ public class TopTerroristReport
     } 
     public void ShowTopTerroristReport()
     {
+        DictOfTerrorists.Clear();
+        DictTerroristReport();
         int maxValue;
         if (DictOfTerrorists.Any())
         {
             maxValue = DictOfTerrorists.Values.Max();
-            Console.WriteLine("Top Reported Living Terrorist(s):");
-            Console.WriteLine(new string('-', 40));
             foreach (var kv in DictOfTerrorists)
             {
-                if (kv.Value == maxValue && kv.Key.IsLife)
+                if (kv.Value == maxValue)
                 {
-                    Console.WriteLine($"Name     : {kv.Key.Name}");
-                    Console.WriteLine($"Reports  : {kv.Value}");
-                    Console.WriteLine(new string('-', 40));
+                    Console.WriteLine(kv.Key.Name);
                 }
             }
         }
@@ -52,5 +50,4 @@ public class TopTerroristReport
         
         
     }
-
 }

@@ -5,13 +5,16 @@ public class StrikeAvailability
 {
     public void ShowStrikeAvailabilty()
     {
-        foreach (var atteckTool in IDF.ReadList())
+        Console.WriteLine("IDF Strike Tools Availability");
+        Console.WriteLine(new string('=', 35));
+        Console.WriteLine("{0,-20} {1,10}", "Tool Name", "Strikes Left");
+        Console.WriteLine(new string('-', 35));
+        foreach (var attackTool in IDF.ReadList())
         {
-            Console.WriteLine($"Attack tool: {atteckTool.Name}");
-            Console.WriteLine($"Available strikes left: {atteckTool.AmountAmmunition}");
-            Console.WriteLine();
+            Console.WriteLine("{0,-20} {1,10}", attackTool.Name, attackTool.AmountAmmunition);
 
         }
+        Console.WriteLine(new string('=', 35));
             
 
     }

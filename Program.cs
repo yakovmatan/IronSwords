@@ -20,9 +20,6 @@ namespace IronSwords
             while(true)
             {
                 menu.Show();
-                Console.WriteLine("press a key to continue.");
-                Console.ReadKey();
-                Console.Clear();
             }
         }
     }

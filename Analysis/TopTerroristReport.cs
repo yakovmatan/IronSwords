@@ -29,10 +29,16 @@ public class TopTerroristReport
     } 
     public void ShowTopTerroristReport()
     {
-        int maxValue;
+        int maxValue = 0;
         if (DictOfTerrorists.Any())
         {
-            maxValue = DictOfTerrorists.Values.Max();
+            foreach (var kv in DictOfTerrorists)
+            {
+                if (kv.Key.IsLife && kv.Value > maxValue)
+                {
+                    maxValue = kv.Value;
+                }
+            }
             Console.WriteLine("Top Reported Living Terrorist(s):");
             Console.WriteLine(new string('-', 40));
             foreach (var kv in DictOfTerrorists)
@@ -40,6 +46,7 @@ public class TopTerroristReport
                 if (kv.Value == maxValue && kv.Key.IsLife)
                 {
                     Console.WriteLine($"Name     : {kv.Key.Name}");
+                    Console.WriteLine($"ID       : {kv.Key.Id}");
                     Console.WriteLine($"Reports  : {kv.Value}");
                     Console.WriteLine(new string('-', 40));
                 }

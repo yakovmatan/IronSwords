@@ -217,6 +217,8 @@
   <ItemGroup>
     <Compile Include="Aman\Aman.cs" />
     <Compile Include="Aman\MessageFactory.cs" />
+    <Compile Include="Analysis\AllMessgaes.cs" />
+    <Compile Include="Analysis\EliminatedTerrorist.cs" />
     <Compile Include="Factory\ProgramInitializer.cs" />
     <Compile Include="Hamas\TerroristFactory.cs" />
     <Compile Include="HTTP\GeminiClient.cs" />

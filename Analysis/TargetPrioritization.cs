@@ -70,8 +70,18 @@ public class TargetPrioritization
         }
         else
         {
+            Console.WriteLine("Most Dangerous Terrorist Report");
+            Console.WriteLine(new string('=', 40));
 
-            Console.WriteLine($"Name: {this.dangerTerrorist.Name}\nRank: {this.dangerTerrorist.Rank}\nquality score: {this.BestWeaponPoints}\nweapon: {string.Join(", ", this.dangerTerrorist.Weapons)}\nlocation: {this.location}");
+            Console.WriteLine($"Name                : {dangerTerrorist.Name}");
+            Console.WriteLine($"ID                  : {dangerTerrorist.Id}");
+            Console.WriteLine($"Rank                : {dangerTerrorist.Rank}");
+            Console.WriteLine($"Weapon Score        : {BestWeaponPoints}");
+            Console.WriteLine($"Weapons             : {string.Join(", ", dangerTerrorist.Weapons)}");
+            Console.WriteLine($"Last Known Location : {location}");
+            Console.WriteLine($"Timestamp           : {TimeStamp}");
+
+            Console.WriteLine(new string('=', 40));
 
         }
 

@@ -7,14 +7,17 @@ public class Terrorist : ITerrorist
     public string Name { get; }
     public int Rank { get; private set; } 
     public bool IsLife { get; set; } = true;
+    public string Id { get; }
     public List<string> Weapons { get; private set; } = new List<string>();
 
     private static Random random = new Random();
 
 
-    public Terrorist(string name)
+
+    public Terrorist(string name,string id)
     {
         this.Name = name;
+        this.Id = id;
         updateRank();
         updateWeapone();
         Hamas.AddTerrorist(this);

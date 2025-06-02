@@ -25,13 +25,19 @@ public class Strike
         bool execution = false;
         foreach (var weapon in IDF.ReadList())
         {
-            if (string.Join(",",weapon.target).Contains(location)) // בודק האם הכלי מתאים לבדוק את המטרה
+            if (string.Join(",",weapon.target).Contains(location)) 
             {
                 if (weapon.AmountAmmunition > 0)
                 {
                     weapon.Attack(target);
-                    Console.WriteLine("The strike on the terrorist was successfully executed");
-                    Console.WriteLine($"Target: {target.Name}\nTime of ordering the attack: {Time} \nplace of attack: {location}\nThe attack tool: {weapon.Name}\nAmmunition used: 1\nOfficer's name: yakov matan");
+                    Console.WriteLine(">>> The strike on the terrorist was successfully executed <<<\n");
+                    Console.WriteLine($"Target Name           : {target.Name}");
+                    Console.WriteLine($"Target ID             : {target.Id}");
+                    Console.WriteLine($"Time of Order         : {Time}");
+                    Console.WriteLine($"Location              : {location}");
+                    Console.WriteLine($"Weapon Used           : {weapon.Name}");
+                    Console.WriteLine($"Ammunition Consumed   : 1");
+                    Console.WriteLine($"Officer in Charge     : Yakov Matan");
                     execution = true;
                 break; 
                 }
